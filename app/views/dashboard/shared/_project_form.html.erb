@@ -1,0 +1,29 @@
+<%= form_with(model: @project, url: @project.new_record? ? dashboard_projects_path : dashboard_project_path(@project), method: @project.new_record? ? :post : :patch, local: true, class: "space-y-4") do |form| %>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div class="space-y-2">
+      <%= form.label :name, class: "text-sm font-medium leading-none" %>
+      <%= form.text_field :name, placeholder: "Enter project name", class: "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2" %>
+    </div>
+    <div class="space-y-2">
+      <%= form.label :category_id, class: "text-sm font-medium leading-none" %>
+      <%= form.collection_select :category_id, Category.all, :id, :title, { prompt: "Select category" }, class: "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2" %>
+    </div>
+    <div class="space-y-2">
+      <%= form.label :status, class: "text-sm font-medium leading-none" %>
+      <%= form.select :status, ['Not Started', 'In Progress', 'Completed'], { prompt: "Select status" }, class: "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2" %>
+    </div>
+    <div class="space-y-2">
+      <%= form.label :priority, class: "text-sm font-medium leading-none" %>
+      <%= form.select :priority, (1..5).map { |n| [n, n] }, { prompt: "Select priority" }, class: "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2" %>
+    </div>
+    <div class="space-y-2">
+      <%= form.label :deadline, class: "text-sm font-medium leading-none" %>
+      <%= form.date_field :deadline, class: "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2" %>
+    </div>
+  </div>
+  <div class="space-y-2">
+    <%= form.label :description, class: "text-sm font-medium leading-none" %>
+    <%= form.text_area :description, rows: 4, placeholder: "Enter project description", class: "flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2" %>
+  </div>
+  <%= form.submit @project.new_record? ? "Create Project" : "Update Project", class: "inline-flex items-center justify-center rounded-md text-sm font-medium bg-black text-white hover:bg-black/90 h-10 px-4 py-2" %>
+<% end %>

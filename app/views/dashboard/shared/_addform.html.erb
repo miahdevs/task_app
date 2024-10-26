@@ -1,0 +1,37 @@
+<div class="rounded-lg border bg-white text-card-foreground shadow-sm">
+  <div class="flex flex-col space-y-1.5 p-6">
+    <h3 class="font-semibold leading-none tracking-tight">Quick Add</h3>
+  </div>
+  <div class="p-6">
+    <form class="space-y-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="space-y-2">
+          <label for="task" class="text-sm font-medium leading-none">Task</label>
+          <input id="task" placeholder="Enter task name" class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2">
+        </div>
+        <div class="space-y-2">
+          <label for="project" class="text-sm font-medium leading-none">Project</label>
+          <select id="project" class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2">
+            <option value="">Select project</option>
+            <option value="Project A">Project A</option>
+            <option value="Project B">Project B</option>
+            <option value="Project C">Project C</option>
+          </select>
+        </div>
+        <div class="space-y-2">
+          <label for="category" class="text-sm font-medium leading-none">Category</label>
+          <select id="category" class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2">
+            <option value="">Select category</option>
+            <option value="Work">Work</option>
+            <option value="Personal">Personal</option>
+            <option value="Health">Health</option>
+            <option value="Finance">Finance</option>
+          </select>
+        </div>
+      </div>
+      <button type="submit" class="inline-flex items-center justify-center rounded-md text-sm font-medium bg-black text-white hover:bg-black/90 h-10 px-4 py-2">
+        Add Task
+      </button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="rounded-lg border bg-white text-card-foreground shadow-sm">
+  <div class="flex items-center p-4">
+    <div class="flex items-center space-x-4">
+      <i data-lucide="check-circle" class="h-6 w-6 text-gray-500"></i>
+      <div>
+        <h3 class="font-medium text-gray-500"><%= task.name %></h3>
+        <p class="text-sm text-gray-500"><%= task.project.name %> • <%= task.project.category.title %></p>
+      </div>
+    </div>
+    <%= link_to edit_dashboard_project_task_path(task.project, task), class: "ml-auto inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 px-3" do %>
+      <i data-lucide="pencil" class="mr-2 h-4 w-4"></i>
+      Edit
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<header class="flex justify-between items-center mb-6">
+  <h1 class="text-3xl font-bold">Projects</h1>
+  <%= link_to new_dashboard_project_path, class: "inline-flex items-center justify-center rounded-md text-sm font-medium bg-black text-white hover:bg-black/90 h-10 px-4 py-2" do %>
+    <i data-lucide="plus-circle" class="mr-2 h-4 w-4"></i>
+    Add Project
+  <% end %>
+</header>
+<% if @projects.any? %>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <% @projects.each do |project| %>
+      <%= render "dashboard/shared/project_card", project: project %>
+    <% end %>
+  </div>
+<% else %>
+  <div class="bg-white shadow-md rounded-lg p-6 text-center">
+    <p class="text-gray-600">You don't have any projects yet.</p>
+    <%= link_to "Create your first project", new_dashboard_project_path, class: "inline-flex items-center justify-center rounded-md text-sm font-medium bg-black text-white hover:bg-black/90 h-10 px-4 py-2 mt-4" %>
+  </div>
+<% end %>
+<script>
+  // Initialize Lucide icons
+  lucide.createIcons();
+</script>

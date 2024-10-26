@@ -1,0 +1,46 @@
+<div class="container mx-auto px-4 py-8">
+  <header class="flex justify-between items-center mb-6">
+    <h1 class="text-3xl font-bold"><%= @task.name %></h1>
+    <%= link_to edit_dashboard_project_task_path(@project, @task), class: "inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-black hover:bg-black/90 text-white h-10 px-4 py-2" do %>
+      <i data-lucide="pencil" class="mr-2 h-4 w-4"></i>
+      Edit Task
+    <% end %>
+  </header>
+  <div class="bg-white shadow-md rounded-lg p-6 mb-6">
+    <div class="mb-4">
+      <h2 class="text-lg font-semibold mb-2">Description</h2>
+      <p><%= @task.description %></p>
+    </div>
+    <div class="grid grid-cols-2 gap-4">
+      <div>
+        <p><span class="text-base font-bold">Status:</span> <span class="text-color-gray-800 text-sm"><%= @task.status %></span></p>
+      </div>
+      <div>
+        <p><span class="text-base font-bold">Deadline:</span> <span class="text-color-gray-800 text-sm"><%= @task.deadline&.strftime("%B %d, %Y") || "Not set" %></span></p>
+      </div>
+    </div>
+  </div>
+  <div class="grid grid-cols-2 gap-4">
+    <div class="bg-white shadow-md rounded-lg p-6 mb-6">
+      <h2 class="text-lg font-semibold mb-2">Assignee</h2>
+      <p><%= @task.assignee.email %></p>
+    </div>
+    <div class="bg-white shadow-md rounded-lg p-6 mb-6">
+      <h2 class="text-lg font-semibold mb-2">Project Details</h2>
+      <div>
+        <p><span class="text-color-gray-800 font-bold underline text-base"><%= link_to @task.project.name, dashboard_project_path(@task.project), class: "underline" %></span></p>
+        <p><span class="text-sm">Deadline:</span> <span class="text-color-gray-800 text-sm"><%= @project.deadline&.strftime("%B %d, %Y") || "Not set" %></span></p>
+      </div>
+    </div>
+  </div>
+  <div class="flex justify-between">
+    <%= link_to dashboard_project_path(@project), class: "inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-black hover:bg-black/90 text-white h-10 px-4 py-2" do %>
+      <i data-lucide="arrow-left" class="mr-2 h-4 w-4"></i>
+      Back to Project
+    <% end %>
+    <%= button_to dashboard_project_task_path(@project, @task), method: :delete, class: "inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-red-600 hover:bg-red-600/90 text-white h-10 px-4 py-2" do %>
+      <i data-lucide="trash" class="mr-2 h-4 w-4"></i>
+      Delete Task
+    <% end %>
+  </div>
+</div>

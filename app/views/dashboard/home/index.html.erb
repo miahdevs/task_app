@@ -1,0 +1,39 @@
+<header class="flex justify-between items-center">
+  <h1 class="text-3xl font-bold">Dashboard</h1>
+  <%= link_to new_dashboard_project_path, class: "inline-flex items-center justify-center rounded-md text-sm font-medium bg-black text-white hover:bg-black/90 h-10 px-4 py-2" do %>
+    <i data-lucide="plus-circle" class="mr-2 h-4 w-4"></i>
+    Add Project
+  <% end %>
+</header>
+<div class="w-full">
+  <div class="inline-flex h-10 items-center justify-center rounded-md bg-muted p-1 text-muted-foreground">
+    <button class="inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm bg-white" data-tab="all">
+      All Tasks
+    </button>
+    <button class="inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-background" data-tab="today">
+      Today
+    </button>
+    <button class="inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-background" data-tab="upcoming">
+      Upcoming
+    </button>
+  </div>
+  <div class="mt-4 space-y-4" id="all-tasks">
+    <% @all_tasks.each do |task| %>
+      <%= render 'dashboard/shared/home_task', task: task %>
+    <% end %>
+  </div>
+  <div class="mt-4 hidden" id="today-tasks">
+    <div class="rounded-lg border bg-white text-card-foreground shadow-sm">
+      <div class="p-4">
+        <p>Tasks due today will be shown here.</p>
+      </div>
+    </div>
+  </div>
+  <div class="mt-4 hidden" id="upcoming-tasks">
+    <div class="rounded-lg border bg-white text-card-foreground shadow-sm">
+      <div class="p-4">
+        <p>Upcoming tasks will be shown here.</p>
+      </div>
+    </div>
+  </div>
+</div>

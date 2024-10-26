@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Jeremiah's Task App</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= yield :head %>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/icon.png" type="image/png">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/icon.png">
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body>
+    <main class="container mx-auto flex">
+      <div class="flex flex-col min-h-screen w-full">
+        <div class="flex h-screen bg-gray-100">
+          <%= render 'dashboard/shared/sidebar' %>
+          <div class="flex-1 p-6 overflow-auto">
+            <div class="max-w-4xl mx-auto space-y-6">
+              <%# <%= render 'shared/dashboard/header' %>
+              <%= yield %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      // Tab switching functionality
+      const tabButtons = document.querySelectorAll('[data-tab]');
+      const tabContents = {
+          'all': document.getElementById('all-tasks'),
+          'today': document.getElementById('today-tasks'),
+          'upcoming': document.getElementById('upcoming-tasks')
+      };
+
+      tabButtons.forEach(button => {
+          button.addEventListener('click', () => {
+              // Update tab button states
+              tabButtons.forEach(btn => {
+                  btn.classList.remove('bg-white');
+                  btn.classList.remove('data-[state=active]:bg-white');
+              });
+              button.classList.add('bg-white');
+              button.classList.add('data-[state=active]:bg-white');
+
+              // Show selected tab content
+              Object.values(tabContents).forEach(content => content.classList.add('hidden'));
+              tabContents[button.dataset.tab].classList.remove('hidden');
+          });
+      });
+
+      // View switching functionality
+      const viewButtons = document.querySelectorAll('[data-view]');
+      viewButtons.forEach(button => {
+          button.addEventListener('click', () => {
+              viewButtons.forEach(btn => {
+                  btn.classList.remove('bg-black', 'text-white');
+                  btn.classList.add('text-gray-700', 'hover:bg-gray-100');
+              });
+              button.classList.remove('text-gray-700', 'hover:bg-gray-100');
+              button.classList.add('bg-black', 'text-white');
+          });
+      });
+    </script>
+  </body>
+</html>

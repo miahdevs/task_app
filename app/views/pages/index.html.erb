@@ -1,0 +1,117 @@
+  <main class="flex-1">
+  <section class="w-full py-12 md:py-24 lg:py-32 xl:py-48">
+    <div class="container px-4 md:px-6">
+      <div class="flex flex-col items-center space-y-4 text-center">
+        <div class="space-y-2">
+          <h1 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
+            Manage Tasks with Ease
+          </h1>
+          <p class="mx-auto max-w-[700px] text-gray-500 md:text-xl">
+            TaskMaster helps you organize, track, and complete your tasks efficiently. Boost your productivity today!
+          </p>
+        </div>
+        <div class="space-x-4">
+          <% if user_signed_in? %>
+            <%= link_to "Go to Dashboard", dashboard_root_path, class: "inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-black text-white hover:bg-black/90 h-10 px-4 py-2" %>
+          <% else %>
+            <%= link_to "Get Started", new_user_registration_path, class: "inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-black text-white hover:bg-black/90 h-10 px-4 py-2" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="w-full py-12 md:py-24 lg:py-32 bg-gray-100" data-id="19">
+    <div class="container px-4 md:px-6" data-id="20">
+      <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-8" data-id="21">Pricing Plans</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6" data-id="22">
+        <div class="rounded-lg border bg-white text-black shadow-sm" data-id="23" data-v0-t="card">
+          <div class="p-6" data-id="24">
+            <h3 class="text-2xl font-bold mb-2" data-id="25">Basic</h3>
+            <p class="text-gray-500 mb-4" data-id="26">Perfect for basic users</p>
+            <ul class="space-y-2 mb-4" data-id="27">
+              <li class="flex items-center" data-id="28"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check mr-2 h-4 w-4 text-green-500" data-id="29"><path d="M20 6 9 17l-5-5"></path></svg>Feature 1</li>
+              <li class="flex items-center" data-id="28"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check mr-2 h-4 w-4 text-green-500" data-id="29"><path d="M20 6 9 17l-5-5"></path></svg>Feature 2</li>
+              <li class="flex items-center" data-id="28"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check mr-2 h-4 w-4 text-green-500" data-id="29"><path d="M20 6 9 17l-5-5"></path></svg>Feature 3</li>
+            </ul>
+            <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-black text-white hover:bg-black/90 h-10 px-4 py-2 w-full" data-id="30">Choose Basic</button></div>
+        </div>
+        <div class="rounded-lg border bg-white text-black shadow-sm" data-id="23" data-v0-t="card">
+          <div class="p-6" data-id="24">
+            <h3 class="text-2xl font-bold mb-2" data-id="25">Pro</h3>
+            <p class="text-gray-500 mb-4" data-id="26">Perfect for pro users</p>
+            <ul class="space-y-2 mb-4" data-id="27">
+              <li class="flex items-center" data-id="28"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check mr-2 h-4 w-4 text-green-500" data-id="29"><path d="M20 6 9 17l-5-5"></path></svg>Feature 1</li>
+              <li class="flex items-center" data-id="28"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check mr-2 h-4 w-4 text-green-500" data-id="29"><path d="M20 6 9 17l-5-5"></path></svg>Feature 2</li>
+              <li class="flex items-center" data-id="28"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check mr-2 h-4 w-4 text-green-500" data-id="29"><path d="M20 6 9 17l-5-5"></path></svg>Feature 3</li>
+            </ul>
+            <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-black text-white hover:bg-black/90 h-10 px-4 py-2 w-full" data-id="30">Choose Pro</button></div>
+        </div>
+        <div class="rounded-lg border bg-white text-black shadow-sm" data-id="23" data-v0-t="card">
+          <div class="p-6" data-id="24">
+            <h3 class="text-2xl font-bold mb-2" data-id="25">Enterprise</h3>
+            <p class="text-gray-500 mb-4" data-id="26">Perfect for enterprise users</p>
+            <ul class="space-y-2 mb-4" data-id="27">
+              <li class="flex items-center" data-id="28"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check mr-2 h-4 w-4 text-green-500" data-id="29"><path d="M20 6 9 17l-5-5"></path></svg>Feature 1</li>
+              <li class="flex items-center" data-id="28"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check mr-2 h-4 w-4 text-green-500" data-id="29"><path d="M20 6 9 17l-5-5"></path></svg>Feature 2</li>
+              <li class="flex items-center" data-id="28"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check mr-2 h-4 w-4 text-green-500" data-id="29"><path d="M20 6 9 17l-5-5"></path></svg>Feature 3</li>
+            </ul>
+            <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-black text-white hover:bg-black/90 h-10 px-4 py-2 w-full" data-id="30">Choose Enterprise</button></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="w-full py-12 md:py-24 lg:py-32">
+    <div class="container px-4 md:px-6">
+      <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-8">
+        What Our Users Say
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="rounded-lg border bg-white text-black shadow-sm">
+          <div class="p-6">
+            <p class="mb-4">
+              "TaskMaster has revolutionized the way I manage my tasks. It's intuitive, powerful, and a joy to use!"
+            </p>
+            <div class="flex items-center">
+              <img src="https://g-ymwcwrpncbg.vusercontent.net/placeholder.svg" alt="User 1" width="40" height="40" class="rounded-full mr-4">
+              <div>
+                <p class="font-semibold">User 1</p>
+                <p class="text-sm text-gray-500">Company 1</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="rounded-lg border bg-white text-black shadow-sm">
+          <div class="p-6">
+            <p class="mb-4">
+              "TaskMaster has revolutionized the way I manage my tasks. It's intuitive, powerful, and a joy to use!"
+            </p>
+            <div class="flex items-center">
+              <img src="https://g-ymwcwrpncbg.vusercontent.net/placeholder.svg" alt="User 1" width="40" height="40" class="rounded-full mr-4">
+              <div>
+                <p class="font-semibold">User 2</p>
+                <p class="text-sm text-gray-500">Company 2</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="rounded-lg border bg-card text-black shadow-sm">
+          <div class="p-6">
+            <p class="mb-4">
+              "TaskMaster has revolutionized the way I manage my tasks. It's intuitive, powerful, and a joy to use!"
+            </p>
+            <div class="flex items-center">
+              <img src="https://g-ymwcwrpncbg.vusercontent.net/placeholder.svg" alt="User 1" width="40" height="40" class="rounded-full mr-4">
+              <div>
+                <p class="font-semibold">User 3</p>
+                <p class="text-sm text-gray-500">Company 3</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<script>
+  lucide.createIcons();
+</script>

@@ -1,0 +1,32 @@
+<%= form_with(model: [@task.project, @task], url: @task.new_record? ? dashboard_project_tasks_path(@task.project) : dashboard_project_task_path(@task.project, @task), method: @task.new_record? ? :post : :patch, local: true, class: "space-y-4") do |form| %>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <div class="space-y-2">
+      <%= form.label :name, "Task Name", class: "text-sm font-medium leading-none" %>
+      <%= form.text_field :name, placeholder: "Enter task name", class: "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2" %>
+    </div>
+    <div class="space-y-2">
+      <%= form.label :project_id, "Project", class: "text-sm font-medium leading-none" %>
+      <%= form.collection_select :project_id, Project.all, :id, :name, { prompt: "Select project" }, class: "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2" %>
+    </div>
+    <div class="space-y-2">
+      <%= form.label :status, "Status", class: "text-sm font-medium leading-none" %>
+      <%= form.select :status, ['Not Started', 'In Progress', 'Completed'], { prompt: "Select status" }, class: "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2" %>
+    </div>
+    <div class="space-y-2">
+      <%= form.label :assignee_id, "Assignee", class: "text-sm font-medium leading-none" %>
+      <%= form.collection_select :assignee_id, User.all, :id, :email, { prompt: "Select assignee" }, class: "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2" %>
+    </div>
+    <div class="space-y-2">
+      <%= form.label :deadline, "Deadline", class: "text-sm font-medium leading-none" %>
+      <%= form.datetime_local_field :deadline, class: "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2" %>
+    </div>
+  </div>
+  <div class="space-y-2">
+    <%= form.label :description, "Description", class: "text-sm font-medium leading-none" %>
+    <%= form.text_area :description, placeholder: "Enter task description", rows: 4, class: "flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2" %>
+  </div>
+  <button class="inline-flex items-center justify-center rounded-md text-sm font-medium bg-black text-white hover:bg-black/90 h-10 px-4 py-2" type="submit">
+    <i data-lucide="save" class="mr-2 h-4 w-4"></i>
+    <%= @task.new_record? ? "Create Task" : "Update Task" %>
+  </button>
+<% end %>

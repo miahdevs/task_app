@@ -58,5 +58,5 @@ end
 
 gem 'devise', '~> 4.9', '>= 4.9.4'
 gem 'rails_live_reload', '~> 0.3.6'
-gem "tailwindcss-rails", "~> 3.0"
+gem "tailwindcss-rails", "~> 3.1"
 gem 'htmlbeautifier'
